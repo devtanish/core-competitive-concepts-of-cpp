@@ -1,25 +1,26 @@
+// Create a program that checks whether two strings are anagrams
+
 #include<iostream>
-#include<unordered_map>
+#include<vector>
+#include<bitset>
+#include<string>
 #include<vector>
 
-template<typename T> std::unordered_map<T, int> frequency(std::vector<T> array){
-    std::unordered_map<T, int> freq;
+ std::bitset<8UL> getBit(const std::string& str){
+    std::bitset<8> bit = 0;
 
-    for(const T& x : array){
-        freq[x]++;
+    for(int i=0 ; i<str.length() ; i++){
+        bit = bit | std::bitset<8>(static_cast<unsigned long long>(str[i]));
     }
 
-    return freq;
+    return bit;
 }
 
 auto main() -> int {
+    std::string str = "Tanish";
+    std::string str2 = "isahnT";
 
-    std::vector<int> array{1, 4, 3, 3, 1, 6, 8, 3, 8}; 
-
-    auto ans = frequency(array);
-
-    for(const auto& [value , frequency] : ans){
-        std::cout<<value<<" appers: "<<frequency<<std::endl;
-    }
-
+    std::cout<<getBit(str)<<std::endl;
+    std::cout<<getBit(str)<<std::endl;
+    
 }
