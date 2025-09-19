@@ -1,25 +1,25 @@
-// Implement a function to find the frequency of each element in an array
-#include <iostream>
-#include <vector>
-#include <unordered_map>
+#include<iostream>
+#include<unordered_map>
+#include<vector>
 
-template<typename T>
-std::unordered_map<T, int> frequency(const std::vector<T>& array) {
+template<typename T> std::unordered_map<T, int> frequency(std::vector<T> array){
     std::unordered_map<T, int> freq;
-    for (const auto& x : array) {
-        freq[x]++; // increment count
+
+    for(const T& x : array){
+        freq[x]++;
     }
+
     return freq;
 }
 
-int main() {
-    std::vector<int> array{1, 4, 3, 3, 1, 6, 8, 3, 8};
+auto main() -> int {
 
-    auto freqMap = frequency(array);
+    std::vector<int> array{1, 4, 3, 3, 1, 6, 8, 3, 8}; 
 
-    for (auto& pair : freqMap) {
-        std::cout << pair.first << " appears " << pair.second << " times\n";
+    auto ans = frequency(array);
+
+    for(const auto& [value , frequency] : ans){
+        std::cout<<value<<" appers: "<<frequency<<std::endl;
     }
 
-    return 0;
 }

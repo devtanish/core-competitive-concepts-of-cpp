@@ -1,7 +1,9 @@
 #include<iostream>
-#include<bitset>
 
 auto main() -> int {
-	std::bitset<8> number = 11;
-	std::cout<<number<<std::endl;
+	int array[] = {1, 2, 3, 4, 5};
+
+	int* ans = std::begin(array);
+
+	std::cout<<*ans<<std::endl;
 }
